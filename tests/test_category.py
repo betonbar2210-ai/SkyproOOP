@@ -1,6 +1,3 @@
-import pytest
-
-
 def test_category_init(fix_category_1, fix_category_2):
     assert fix_category_1.name == 'Смартфоны'
     assert fix_category_1.description == 'Смартфоны, как средство'
