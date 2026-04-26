@@ -1,3 +1,4 @@
+from src.products import Product
 class Category:
     name: str
     description: str
@@ -8,6 +9,17 @@ class Category:
     def __init__(self, name, description, products):
         self.name = name
         self.description = description
-        self.products = products if products else []
+        self.__products = products if products else []
         Category.category_count += 1
         Category.product_count += len(products) if products else 0
+
+    @property
+    def product(self):
+        product_str = ''
+        for prod in self.__products:
+            product_str += f'{prod.name}, {prod.price} руб. {prod.quantity}: шт.\n'
+        return product_str
+
+    def add_product(self, new_product):
+        self.__products.append(new_product)
+        return self.__products
