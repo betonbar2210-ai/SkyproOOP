@@ -1,6 +1,5 @@
-from pyexpat.errors import messages
-
 from src.products import Product
+
 
 def test_products_init(fix_product):
     assert fix_product.name == "QLED 4K"
@@ -10,21 +9,31 @@ def test_products_init(fix_product):
 
 
 def test_new_product():
-    new_product = Product.new_product({"name": "Samsung Galaxy S23 Ultra",
-         "description": "256GB, Серый цвет, 200MP камера",
-         "price": 180000.0,
-         "quantity": 5})
+    new_product = Product.new_product(
+        {
+            "name": "Samsung Galaxy S23 Ultra",
+            "description": "256GB, Серый цвет, 200MP камера",
+            "price": 180000.0,
+            "quantity": 5,
+        }
+    )
     assert new_product.name == "Samsung Galaxy S23 Ultra"
     assert new_product.description == "256GB, Серый цвет, 200MP камера"
     assert new_product.price == 180000.0
     assert new_product.quantity == 5
 
+
 def test_price_update(capsys, fix_product):
     fix_product.price = 0
     message = capsys.readouterr()
-    assert message.out == 'Цена не должна быть нулевая или отрицательная\n'
+    assert message.out == "Цена не должна быть нулевая или отрицательная\n"
     fix_product.price = 100
     assert fix_product.price == 100
 
 
+def test_products_str(fix_product):
+    assert str(fix_product) == "QLED 4K, 100000 руб. Остаток: 101 шт."
 
+
+def test_products_add(fix_product, fix_product_2):
+    assert fix_product + fix_product_2 == 11780000.0

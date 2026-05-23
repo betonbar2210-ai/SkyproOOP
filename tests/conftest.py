@@ -8,6 +8,12 @@ from src.products import Product
 def fix_product():
     return Product(name="QLED 4K", description="Фоновая подсветка", price=100000, quantity=101)
 
+
+@pytest.fixture
+def fix_product_2():
+    return Product(name="Iphone 15", description="512GB, Gray space", price=210000.0, quantity=8)
+
+
 @pytest.fixture
 def fix_category_1():
     return Category(
