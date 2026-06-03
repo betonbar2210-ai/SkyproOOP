@@ -14,12 +14,12 @@ class Product:
         return f"{self.name}, {self.price} руб. Остаток: {self.quantity} шт."
 
     def __add__(self, other):
-        if isinstance(other, Product):
+        if type(other) is type(self):
             self_result = self.price * self.quantity
             other_result = other.price * other.quantity
             return self_result + other_result
         else:
-            raise TypeError("Складывать можно только объекты класса Product или его наследников")
+            raise TypeError("Невозможно сложить товары разных классов")
 
     @classmethod
     def new_product(cls, my_dict):

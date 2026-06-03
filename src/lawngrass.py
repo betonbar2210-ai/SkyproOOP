@@ -9,7 +9,7 @@ class LawnGrass(Product):
         self.color = color
 
     def __add__(self, other):
-        if isinstance(other, LawnGrass):
+        if type(other) is LawnGrass:
             return super().__add__(other)
         else:
             raise TypeError("Невозможно сложить объекты разных классов")
