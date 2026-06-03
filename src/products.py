@@ -10,6 +10,14 @@ class Product:
         self.__price = price
         self.quantity = quantity
 
+    def __str__(self):
+        return f'{self.name}, {self.price} руб. Остаток: {self.quantity} шт.'
+
+    def __add__(self, other):
+        self_result = self.price * self.quantity
+        other_result = other.price * other.quantity
+        return self_result + other_result
+
     @classmethod
     def new_product(cls, my_dict):
         name = my_dict.get("name")
@@ -28,4 +36,3 @@ class Product:
             print('Цена не должна быть нулевая или отрицательная')
         else:
             self.__price = new_price
-
