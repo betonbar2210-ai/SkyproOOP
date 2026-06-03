@@ -1,3 +1,5 @@
+import pytest
+
 from src.products import Product
 
 
@@ -37,3 +39,8 @@ def test_products_str(fix_product):
 
 def test_products_add(fix_product, fix_product_2):
     assert fix_product + fix_product_2 == 11780000.0
+
+
+def test_products_add_error(fix_product):
+    with pytest.raises(TypeError):
+        fix_product + 1

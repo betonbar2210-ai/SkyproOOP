@@ -19,7 +19,7 @@ class Category:
         count = 0
         for quanti in self.__products:
             count += quanti.quantity
-        return f'{self.name}, количество продуктов: {count} шт.'
+        return f"{self.name}, количество продуктов: {count} шт."
 
     @property
     def products_list(self):
@@ -27,9 +27,9 @@ class Category:
 
     @property
     def products(self):
-        product_str = ''
+        product_str = ""
         for prod in self.__products:
-            product_str += f'{str(prod)}\n'
+            product_str += f"{str(prod)}\n"
         return product_str
 
     def add_product(self, new_product):
