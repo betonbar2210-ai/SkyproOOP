@@ -16,7 +16,10 @@ class Product:
     def __add__(self, other):
         self_result = self.price * self.quantity
         other_result = other.price * other.quantity
-        return self_result + other_result
+        if isinstance(other, Product):
+            return self_result + other_result
+        else:
+            raise TypeError("Невозможно сложить объекты разных классов")
 
     @classmethod
     def new_product(cls, my_dict):

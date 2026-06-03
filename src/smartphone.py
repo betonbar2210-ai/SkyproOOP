@@ -8,3 +8,9 @@ class Smartphone(Product):
         self.model = model
         self.memory = memory
         self.color = color
+
+    def __add__(self, other):
+        if isinstance(other, Smartphone):
+            return super().__add__(other)
+        else:
+            raise TypeError("Невозможно сложить объекты разных классов")
