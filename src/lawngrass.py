@@ -10,6 +10,6 @@ class LawnGrass(Product):
 
     def __add__(self, other):
         if isinstance(other, LawnGrass):
-           return super().__add__(other)
+            return super().__add__(other)
         else:
             raise TypeError("Невозможно сложить объекты разных классов")
