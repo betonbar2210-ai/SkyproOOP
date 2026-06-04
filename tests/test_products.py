@@ -10,6 +10,11 @@ def test_products_init(fix_product):
     assert fix_product.quantity == 101
 
 
+def test_products_init_error():
+    with pytest.raises(ValueError):
+        Product("QLED 4K", "Фоновая подсветка", 100000, 0)
+
+
 def test_new_product():
     new_product = Product.new_product(
         {
