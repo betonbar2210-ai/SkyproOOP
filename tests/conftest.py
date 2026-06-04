@@ -1,7 +1,9 @@
 import pytest
 
 from src.category import Category
+from src.lawngrass import LawnGrass
 from src.products import Product
+from src.smartphone import Smartphone
 
 
 @pytest.fixture
@@ -58,3 +60,53 @@ def utils_json():
             ],
         },
     ]
+
+
+@pytest.fixture
+def grass_product_1():
+    grass1 = LawnGrass("Газонная трава",
+                       "Элитная трава для газона",
+                       500.0,
+                       2,
+                       "Россия",
+                       "7 дней",
+                       "Зеленый")
+    return grass1
+
+
+@pytest.fixture
+def grass_product_2():
+    grass2 = LawnGrass("Газонная трава 2",
+                       "Выносливая трава",
+                       450.0,
+                       1,
+                       "США",
+                       "5 дней",
+                       "Темно-зеленый")
+    return grass2
+
+
+@pytest.fixture
+def smartphone_product_1():
+    smartphone1 = Smartphone("Samsung Galaxy S23 Ultra",
+                             "256GB, Серый цвет, 200MP камера",
+                             180000.0,
+                             2,
+                             95.5,
+                             "S23 Ultra",
+                             256,
+                             "Серый")
+    return smartphone1
+
+
+@pytest.fixture
+def smartphone_product_2():
+    smartphone2 = Smartphone("Iphone 15",
+                             "512GB, Gray space",
+                             210000.0,
+                             1,
+                             98.2,
+                             "15",
+                             512,
+                             "Gray space")
+    return smartphone2
