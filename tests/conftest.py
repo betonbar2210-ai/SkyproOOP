@@ -39,8 +39,7 @@ def utils_json():
     return [
         {
             "name": "Смартфоны",
-            "description":
-                "Смартфоны, как средство не только коммуникации",
+            "description": "Смартфоны, как средство не только коммуникации",
             "products": [
                 {
                     "name": "Samsung Galaxy C23 Ultra",
@@ -64,49 +63,25 @@ def utils_json():
 
 @pytest.fixture
 def grass_product_1():
-    grass1 = LawnGrass("Газонная трава",
-                       "Элитная трава для газона",
-                       500.0,
-                       2,
-                       "Россия",
-                       "7 дней",
-                       "Зеленый")
+    grass1 = LawnGrass("Газонная трава", "Элитная трава для газона", 500.0, 2, "Россия", "7 дней", "Зеленый")
     return grass1
 
 
 @pytest.fixture
 def grass_product_2():
-    grass2 = LawnGrass("Газонная трава 2",
-                       "Выносливая трава",
-                       450.0,
-                       1,
-                       "США",
-                       "5 дней",
-                       "Темно-зеленый")
+    grass2 = LawnGrass("Газонная трава 2", "Выносливая трава", 450.0, 1, "США", "5 дней", "Темно-зеленый")
     return grass2
 
 
 @pytest.fixture
 def smartphone_product_1():
-    smartphone1 = Smartphone("Samsung Galaxy S23 Ultra",
-                             "256GB, Серый цвет, 200MP камера",
-                             180000.0,
-                             2,
-                             95.5,
-                             "S23 Ultra",
-                             256,
-                             "Серый")
+    smartphone1 = Smartphone(
+        "Samsung Galaxy S23 Ultra", "256GB, Серый цвет, 200MP камера", 180000.0, 2, 95.5, "S23 Ultra", 256, "Серый"
+    )
     return smartphone1
 
 
 @pytest.fixture
 def smartphone_product_2():
-    smartphone2 = Smartphone("Iphone 15",
-                             "512GB, Gray space",
-                             210000.0,
-                             1,
-                             98.2,
-                             "15",
-                             512,
-                             "Gray space")
+    smartphone2 = Smartphone("Iphone 15", "512GB, Gray space", 210000.0, 1, 98.2, "15", 512, "Gray space")
     return smartphone2
