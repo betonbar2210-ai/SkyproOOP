@@ -1,4 +1,3 @@
-from src.print_mixin import PrintMixin
 from src.products import Product
 
 
